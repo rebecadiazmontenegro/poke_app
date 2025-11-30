@@ -1,7 +1,9 @@
 import React from "react";
 
 const Footer = () => {
-  return <footer>Footer</footer>;
+  return <footer>
+          Datos de PokeApi.co
+        </footer>;
 };
 
 export default Footer;
