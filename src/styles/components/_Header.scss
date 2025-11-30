@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-family: "Pixelify Sans", sans-serif;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: var(--black);
+  margin-bottom: 0;
+
+  clip-path: polygon(100% 0, 0 0, 0 100%, 65% 100%, 100% 60%);
+}
+
+.circle {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: var(--blue);
+    border: solid var(--grey);
+    border-radius: 100px;
+}

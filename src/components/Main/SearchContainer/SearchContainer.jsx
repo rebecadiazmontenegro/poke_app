@@ -1,21 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import Search from "./Search/Search";
 import PokemonList from "./PokemonList/PokemonList";
+import { PokemonContext } from "../../../context/PokemonContext";
 
 const SearchContainer = () => {
+  const { pokemons: contextPokemons } = useContext(PokemonContext);
   const [value, setValue] = useState("");
   const [pokemons, setPokemons] = useState([]);
-  const [message, setMessage] = useState(""); // para que salga el mensaje si el pokemon ya se ha buscado
+  const [message, setMessage] = useState(""); 
   const [clearInput, setClearInput] = useState(() => () => {});
 
   const fetchPokemon = async (pokemonName) => {
     if (!pokemonName) return;
 
     if (
-      pokemons.some((p) => p.name.toLowerCase() === pokemonName.toLowerCase())
+      [...pokemons, ...contextPokemons].some(
+        (p) => p.name.toLowerCase() === pokemonName.toLowerCase()
+      )
     ) {
-      setMessage(`¡El Pokémon ${pokemonName} ya está en la lista!`); // Por si el Pokémon ya está en la lista
+      setMessage(`¡El Pokémon ${pokemonName} ya está en la lista!`);
       return;
     }
 
@@ -23,23 +27,23 @@ const SearchContainer = () => {
       const res = await axios.get(
         `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`
       );
-      setPokemons((prev) => [...prev, res.data]); //Para que pueda guardarse el pokemon que buscas cuando buscas otro
+      setPokemons((prev) => [...prev, res.data]);
       clearInput();
-      setValue(""); // Para que el debounce no este buscando todo el rato
-      setMessage(""); // Limpiar mensaje si la búsqueda fue correcta
+      setValue("");
+      setMessage("");
     } catch (e) {
       setMessage(`No se encontró el Pokémon ${pokemonName}.`);
     }
   };
-  
-  useEffect(() => { //Aquí empieza el debounce 
-    if (!value) return;
+
+  useEffect(() => {
+    if (!value) return; // <- evita peticiones con input vacío
 
     const timeoutId = setTimeout(() => {
       fetchPokemon(value);
-    }, 3000);
+    }, 2000); // debounce 2s
 
-    return () => clearTimeout(timeoutId); // Para que no llame a la API mientras se esta escribiendo, solo cuando se para 
+    return () => clearTimeout(timeoutId);
   }, [value]);
 
   return (
@@ -49,8 +53,8 @@ const SearchContainer = () => {
         fetchPokemon={fetchPokemon}
         setClearInput={setClearInput}
       />
-      {message && <p>{message}</p>}
-      <PokemonList pokemons={pokemons} />
+      {message && <p className="alertMensaje">{message}</p>}
+      <PokemonList pokemons={[...contextPokemons, ...pokemons]} />
     </section>
   );
 };

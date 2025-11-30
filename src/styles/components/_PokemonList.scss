@@ -1,0 +1,10 @@
+.pokemonList {
+  padding: 20px;
+
+  .rendercard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+}

@@ -6,8 +6,8 @@ const PokemonList = ( {pokemons} ) => {
 const renderCard = () => pokemons.map(pokemon => <PokemonCard key={pokemon.id} pokemon={pokemon}/>)
 
   return (
-    <section>
-      <div>
+    <section className="pokemonList">
+      <div className="rendercard">
        {renderCard()}
       </div>
     </section>

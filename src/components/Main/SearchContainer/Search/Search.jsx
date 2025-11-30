@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 const Search = ({ setValue, fetchPokemon, setClearInput }) => {
   const [input, setInput] = useState("");
 
-  // Pasar la función para limpiar el input al SearchContainer
   useEffect(() => {
     setClearInput(() => () => setInput(""));
   }, [setClearInput]);
@@ -16,19 +15,20 @@ const Search = ({ setValue, fetchPokemon, setClearInput }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchPokemon(input); // Buscar inmediatamente al pulsar el botón
+    fetchPokemon(input); 
   };
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
+    <section className="search">
+      <h1>Encuentra tu Pokemon</h1>
+      <form className="formSearch" onSubmit={handleSubmit}>
         <input
           type="text"
           value={input}
           onChange={handleChange}
           placeholder="Busca un Pokémon"
         />
-        <button type="submit">Buscar</button>
+        <button className="searchButton" type="submit">Buscar</button>
       </form>
     </section>
   );

@@ -1,0 +1,15 @@
+@use "./views/index";
+@use "./views/App";
+
+@use "./components/Header.scss";
+@use "./components/Nav.scss";
+
+@use "./components/SearchContainer";
+@use "./components/Search";
+@use "./components/PokemonList";
+@use "./components/PokemonCard";
+
+@use "./components/Details";
+
+@use "./components/PokemonForm";
+

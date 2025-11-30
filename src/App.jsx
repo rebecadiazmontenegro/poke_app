@@ -1,20 +1,20 @@
-//import { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import { PokemonProvider } from "./context/PokemonContext";
 
-import Header from './components/Header'
-import Main from './components/Main'
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <>
-    <BrowserRouter >
-      <Header />
-      <Main />
-    </BrowserRouter>
+    <PokemonProvider>
+      <BrowserRouter>
+        <Header />
+        <Main />
+      </BrowserRouter>
       <Footer />
-    </>
-  )
+    </PokemonProvider>
+  );
 }
-export default App
+
+export default App;

@@ -1,0 +1,85 @@
+.pokemonCard {
+  display: flex;
+  flex-direction: column;
+  font-family: "Pixelify Sans", sans-serif;
+  align-items: center;
+  border: 2px solid #afafaf;
+  box-shadow: 5px 5px 0px #878787;
+  border-radius: 8px;
+  border-bottom-left-radius: 24px;
+  border: 2px solid --grey;
+  width: 250px;
+  box-sizing: border-box;
+  background-color: var(--grey);
+
+  .topCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    padding-top: 8px;
+  }
+
+  h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+
+  .lightRed,
+  .lightBlue,
+  .lightGreen {
+    width: 8px;
+    height: 8px;
+  }
+
+  .lights {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+  }
+
+  .lightBlue {
+    background-color: var(--blue);
+    border: 1px solid var(--black);
+    border-radius: 100px;
+  }
+  .lightRed {
+    background-color: var(--red);
+    border: 1px solid var(--black);
+    border-radius: 100px;
+  }
+  .lightGreen {
+    background-color: var(--green);
+    border: 1px solid var(--black);
+    border-radius: 100px;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    background-color: var(--black);
+    border: 2px solid #000000;
+    box-shadow: inset -5px -5px 5px #000000;
+    border-radius: 8px;
+    padding: 12px 48px;
+    margin-bottom: 32px;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .detalleButtom {
+    margin-bottom: 20px;
+    font-size: 16px;
+    padding: 4px 16px;
+    border: 2px solid var(--black);
+    background-color: var(--blue);
+    box-shadow: 2px 2px 0px var(--black);
+    border-radius: 6px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+}

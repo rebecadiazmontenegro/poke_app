@@ -11,10 +11,17 @@ const PokemonCard = ({ pokemon }) => {
   };
 
   return (
-    <article>
-      <h3>{pokemon.name}</h3>
+    <article className="pokemonCard">
+      <div className="topCard">
+        <h3>{pokemon.name}</h3>
+        <div className="lights">
+          <div className="lightRed"></div>
+          <div className="lightBlue"></div>
+          <div className="lightGreen"></div>
+        </div>
+      </div>
       <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-      <button onClick={handleDetails}>Detalles</button>
+      <button className="detalleButtom" onClick={handleDetails}>Detalles</button>
     </article>
   );
 };

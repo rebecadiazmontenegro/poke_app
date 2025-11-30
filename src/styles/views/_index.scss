@@ -1,0 +1,28 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --red: #d70c2a;
+  --black: #232323;
+  --green: #6fe47f;
+  --grey: #dddfdd;
+  --blue: #28acff;
+  --font-light: 400;
+  --font-regular: 500;
+  --font-medium: 600;
+  --font-bold: 700;
+}
+
+h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 40px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--font-regular);
+  background-color: var(--red);
+}
+
