@@ -3,7 +3,7 @@ import { PokemonProvider } from "./context/PokemonContext";
 
 import Header from "./components/Header";
 import Main from "./components/Main";
-import Footer from "./components/Footer";
+
 
 function App() {
   return (
@@ -12,7 +12,6 @@ function App() {
         <Header />
         <Main />
       </BrowserRouter>
-      <Footer />
     </PokemonProvider>
   );
 }
