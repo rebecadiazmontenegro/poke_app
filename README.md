@@ -1,4 +1,8 @@
 # Proyecto React + PokeAPI  
+## Link al despligue
+```url
+https://pokeapprebeca.netlify.app/
+```
 ## Buscador de Pokémons con Hooks, Router, Context y LocalStorage
 
 Este proyecto consiste en crear una aplicación en **React funcional** que permite buscar, visualizar y crear nuevos Pokémons usando la **PokeAPI**. A lo largo del desarrollo se trabajará con:
